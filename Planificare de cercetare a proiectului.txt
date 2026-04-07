@@ -1,0 +1,189 @@
+Scopul acestui document este acela e a ma ajuta sa planuiesc procesul de research, pentru a invata 
+in mod organizat. Printre altele, voi creea o lista de subiecte/notinuni/concepte asupra carora ma 
+voi documenta inainte de a incepe proiectul propriu-zis; Pentru tot procesul de documentare 
+(in doua etape) voi aloca 10 zile incepand de luni, 30.03.2026. 
+
+Acest document va contine:
+- O lista propriu-zisa de "research topics" impartita in sectiuni;
+- Resurse pentru studiu pentru fiecare categorie din lista;
+- Modul de studiu (cum imi voi fundamenta notinunile studiate);
+- Un plan de studiu ce va avea in vedere impartirea topic-urilor pe zile;
+- Subiecte adiacente, notiuni noi care vor fi studiate in viitor (se va completa pe masura ce 
+se va realiza etapa de research)
+
+I) Lista cu research topics
+
+A) Sectiunea tehnica
+
+-------------------------- go programming topics ------------------------------
+
+- golang programing language fundamentals
+- data validation
+- go projects structure / layout
+- go interfaces and patterns like dependency injection and how are used in go
+- go http package
+- routing in go (including middleware)
+- password hashing
+
+-------------------------- database topics ------------------------------------
+
+- revisit sql basics
+- PosgresSql
+- sql normalization and advanced patterns
+
+
+-------------------------- networking and web apis ------------------------------
+
+- understand the http protocol (http verbs, status codes, etc)
+- rest apis and how to build a proper one
+- jwt auth
+
+-------------------------- frontend topics --------------------------------------
+
+- js fetch method
+- js apis and how are they linked to a backend
+- learn vue
+- state management (pinia)
+- vue router
+
+---------------------------- docker and project deployment ---------------------
+- learn docker (sau podman din moment ce voi folosi fedora)
+
+--------------------------- web design ------------------------------------------
+
+- basic web design
+- learn how to design components
+- ui error schema
+- learn figma
+
+B) Sectiunea de inginerie a aplicatiei
+
+------------------- project planning and app architecture ------------------------
+
+- how to plan a fullstack app from end to end
+- user stories
+- role based acces control
+- lms project features research
+
+
+Sectiunea B) reprezinta cea de-a doua etapa de research care contine totodata si primul pas 
+din masterplan (vezi celalalt doc).
+
+II) Resurse pentru studiu (recomandate de gemini)
+
+---------------------- resurse generale (referință rapidă) -------------------------
+https://developer.mozilla.org/en-US/  (Cea mai de încredere resursă pentru Web/JS)
+https://www.w3schools.com/  (Doar pentru verificat sintaxă rapidă)
+https://web.dev/learn/  (Ghiduri Google pentru bune practici în web)
+
+---------------------- limbajul go ------------------------------------------------
+https://gobyexample.com/  (Sintaxă vizuală rapidă)
+https://go.dev/doc/tutorial/getting-started  (Tutorial oficial)
+https://quii.gitbook.io/learn-go-with-tests  (Esențial pentru Interfețe și Dependency Injection)
+https://go.dev/blog/routing-enhancements  (Noua metodă de routing din Go 1.22+)
+https://github.com/golang-standards/project-layout  (Structura standard de directoare)
+
+---------------------- sql si postgres --------------------------------------------
+https://sqlbolt.com/  (Exerciții interactive de bază)
+https://pgexercises.com/  (Exerciții specifice PostgreSQL)
+https://www.postgresqltutorial.com/  (Ghid complet pentru funcții Postgres)
+https://www.freecodecamp.org/news/database-normalization-1nf-2nf-3nf-table-examples/  (Normalizarea explicată vizual)
+https://www.digitalocean.com/community/tutorials/database-normalization / normalizare (Un articol mai in depth decat cel propus de ai)
+
+---------------------- web si http ------------------------------------------------
+https://developer.mozilla.org/en-US/docs/Web/HTTP/Status  (Status codes și Verbs)
+https://jwt.io/introduction  (Totul despre structura JWT)
+https://restfulapi.net/  (Standarde pentru design-ul API-urilor)
+https://gowebexamples.com/password-hashing/  (Cum se folosește Bcrypt în Go)
+
+---------------------- frontend si javascript ------------------------------------
+https://javascript.info/  (Cea mai bună resursă pentru Async/Await și Fetch)
+https://vuejs.org/guide/introduction.html  (Documentația oficială Vue 3)
+https://router.vuejs.org/guide/  (Navigare între pagini în Vue)
+https://pinia.vuejs.org/getting-started.html  (Managementul stării globale - ex: login user)
+
+---------------------- docker si podman -------------------------------------------
+https://podman.io/docs  (Documentație oficială Podman pentru Fedora)
+https://podman-desktop.io/docs/intro  (Interfața vizuală pentru containere)
+
+---------------------- web design si figma ----------------------------------------
+https://www.refactoringui.com/  (Reguli de design pentru programatori)
+https://help.figma.com/hc/en-us/articles/360040328273-Create-and-use-components  (Ghid componente Figma)
+https://www.atlassian.com/agile/project-management/user-stories  (Cum se scriu User Stories)
+
+! Aceste resurse sunt doar un punct de pornire, pe masura ce voi face research voi mai cauta si altele. 
+
+III) Modul de studiu
+
+Voi folosi doua metode de invatare in functie de tipurile de subiecte de documantare (bazate pe cod sau bazate pe concept)
+
+Pentru subiecte concept based:
+
+1) Documentare (din mai multe surse)
+2) Construirea unui model mental (idei adunate din toate sursele)
+3) Transpunerea ideilor in notite
+4) Generare de intrebari de tip quiz
+
+Pentru subiecte code based:
+
+1) Analiza cod (citire si inspectare cod scris + documentatie)
+2) Laborator practic (scriere de cod)
+3) Explicatie si documentare a codului in comentarii
+4) Experimentare in cod (schimbarea a catorva parametri pentru a vedea cum aceasta influenteaza rezultatul)
+
+IV) Program de studiu
+
+Programul de studiu va fi imaprtit pe mai multe module:
+
+1): Go Mastery (Zilele 1-2)
+
+Focus: Sintaxă, Arhitectură și Comunicare Server-Side.
+
+- Ziua 1 (Luni, 30.03): Bazele și Structura
+-Subiecte: Basics (Pointers, Structs), Project Layout, Interfaces & DI, Data Validation.
+
+- Ziua 2 (Marți, 31.03): Web Server & Middleware
+- Subiecte: net/http package, Routing (Go 1.22+), Middleware logic.
+
+2) Data Engineering (Zilele 3-4)
+
+Focus: Stocare sigură și organizată.
+
+- Ziua 3 (Miercuri, 01.04): Postgres & SQL Basics
+- Subiecte: PostgreSQL (Instalare Podman), Revisit SQL, Password Hashing (Bcrypt).
+
+- Ziua 4 (Joi, 02.04): Arhitectura Datelor
+- Subiecte: SQL Normalization (1NF-3NF), Advanced Patterns (Joins, Constraints).
+
+3) The Bridge & Frontend (Zilele 5-7)
+
+Focus: Conectarea lumilor și interfața.
+
+- Ziua 5 (Vineri, 03.04): Networking & REST
+- Subiecte: HTTP Protocol, REST APIs (Best practices), JWT Auth.
+
+- Ziua 6 (Sâmbătă, 04.04): JS & Vue Basics
+- Subiecte: JS Fetch, JS APIs Linking, Learn Vue (Composition API).
+
+- Ziua 7 (Duminică, 05.04): Vue Ecosystem
+- Subiecte: Vue Router, State Management (Pinia).
+
+4) Design & Engineering (Zilele 8-10)
+
+Focus: Produsul final și Masterplanul.
+
+- Ziua 8 (Luni, 06.04): UI & Figma
+- Subiecte: Basic Web Design, Figma, Component Design.
+
+- Ziua 9 (Marți, 07.04): Error Handling & Planning
+- Subiecte: UI Error Schema, How to plan a fullstack app end-to-end.
+
+- Ziua 10 : LMS Deep Research (Pasul 1 Masterplan)
+- Subiecte: User Stories, RBAC, LMS Features Research.
+
+
+V) Subiecte de studiu adiacente  
+
+------- se va completa ----------
+
+
