@@ -1,0 +1,32 @@
+package templates
+
+import "proiect_lms/views"
+import "fmt"
+
+templ BookListRows(books []views.BookView) {
+    for _, book := range books {
+        <tr class="border-b hover:bg-gray-50">
+            <td class="p-3 text-slate-700">{ book.Title }</td>
+            <td class="p-3 text-slate-600">{ book.Author }</td>
+            <td class="p-3 font-mono text-sm">{ book.ISBN }</td>
+            <td class="p-3">
+                <button 
+                    hx-post={ fmt.Sprintf("/loan-book?book_id=%d", book.ID) } 
+                    class="bg-green-400 text-slate-900 px-4 py-2 rounded-lg font-bold hover:bg-green-500 transition-colors">
+                    Loan
+                </button>
+            </td>
+        </tr>
+    }
+}
+
+templ LoanListRows(loans []views.LoanView) {
+    for _, loan := range loans {
+        <tr class="border-b hover:bg-gray-50">
+            <td class="p-3 text-slate-700">{ loan.BookID }</td>
+            <td class="p-3 text-slate-600">{ loan.UserID }</td>
+            <td class="p-3">{ loan.LoanDate.Format("02.01.2006") }</td>
+            <td class="p-3">{ loan.DueDate.Format("02.01.2006") }</td>
+        </tr>
+    }
+}

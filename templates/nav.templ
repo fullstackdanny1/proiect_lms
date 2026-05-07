@@ -1,0 +1,14 @@
+package templates
+
+templ Sidebar(role string) {
+    <nav class="flex-1 px-4 py-6 space-y-2">
+        if role == "Admin" {
+            <a href="/dashboard" class="block p-3 rounded hover:bg-slate-800 border-l-4 border-green-400">Books</a>
+            <a href="/add-book" class="block p-3 rounded hover:bg-slate-800">Add Book</a>
+            <a href="/get-loans" class="block p-3 rounded hover:bg-slate-800">Loans (All)</a>
+        } else {
+            <a href="/dashboard" class="block p-3 rounded hover:bg-slate-800 border-l-4 border-green-400">Search & Loan</a>
+            <a href="/get-loans" class="block p-3 rounded hover:bg-slate-800">My History</a>
+        }
+    </nav>
+}

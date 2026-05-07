@@ -1,0 +1,47 @@
+1. Arhitectura Bazei de Date (Entități și Relații)
+
+Pentru ca sistemul să fie scalabil și eficient, trebuie să ai tabele normalizate. Nu stoca totul într-un singur loc.
+
+TabelRol / Detalii (Coloane cheie)
+
+Users: UserID (PK), Nume, Email, TipUser (Student, Profesor, Admin), DataInscrierii
+Books: BookID (PK), Titlu, ISBN, AnAparitie, CategorieID (FK), TotalCopii
+Authors:AuthorID (PK), NumeAutor 
+BookAuthors: BookID (FK), AuthorID (FK) - 
+Tabel de legătură (Many-to-Many)
+Loans (Împrumuturi)LoanID (PK), UserID (FK), BookID (FK), DataImprumut, DataScadenta, DataReturnare
+Fines (Amenzi)FineID (PK), LoanID (FK), Suma, Status (Plătit/Neplătit)
+
+=====================================================================================================================
+
+2. Tipuri de Useri și Meniuri (UX/UI)
+Platforma trebuie să fie segmentată în funcție de rol, pentru a evita încărcarea inutilă a interfeței.
+
+A. Administrator / Librarian
+Dashboard: Statistici rapide (cărți împrumutate azi, restanțe, cărți populare).
+
+Gestionare Cărți: Adăugare manuală sau scanare cod ISBN (care preia date automat din API-uri precum Google Books API).
+
+Gestionare Useri: Aprobare conturi noi, blocare useri cu amenzi neplătite.
+
+Rapoarte: Generare PDF-uri cu statistici sau cărți cu termen depășit.
+
+B. Membru (Student/Cititor)
+Căutare (Catalog): Filtrare după titlu, autor, gen.
+
+Contul meu: Istoricul împrumuturilor, cărți curente, amenzi de plată.
+
+Rezervări: Posibilitatea de a pune o carte pe "listă de așteptare".
+
+======================================================================================================================
+
+3. Workflow-ul de Adăugare a Cărților
+Pentru a face platforma "profesională", nu pune utilizatorul să completeze 10 câmpuri manual. Implementează următoarele:
+
+Formular inteligent: Câmp pentru ISBN.
+
+API Integration: Când introduci ISBN-ul, folosește un API (precum Open Library API) pentru a prelua automat: 
+Titlul, Autorul, Coperta (imaginea), Descrierea și Categoria.
+
+Gestionare Stoc: Adaugă un câmp de Locație/Raft (ex: "Raft A, Secțiunea Istorie") pentru a ajuta bibliotecarul să găsească fizic cartea.
+

@@ -1,0 +1,18 @@
+package templates
+
+templ AddBookForm() {
+    <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md mt-10">
+        <h2 class="text-2xl font-bold mb-6">Add New Library Book</h2>
+        <form hx-post="/add-book" class="space-y-4">
+            <input type="text" name="title" placeholder="Book Title" class="w-full border p-2 rounded" required />
+            <input type="text" name="author" placeholder="Author" class="w-full border p-2 rounded" required />
+            <input type="text" name="isbn" placeholder="ISBN" class="w-full border p-2 rounded" required />
+            <input type="text" name="category" placeholder="Category" class="w-full border p-2 rounded" required />
+            <div class="grid grid-cols-2 gap-4">
+                <input type="number" name="year" placeholder="Year" class="border p-2 rounded" required />
+                <input type="number" name="copies" placeholder="Total Copies" class="border p-2 rounded" required />
+            </div>
+            <button type="submit" class="w-full bg-slate-900 text-white py-3 rounded-lg font-bold">ADD BOOK</button>
+        </form>
+    </div>
+}

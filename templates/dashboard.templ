@@ -1,0 +1,57 @@
+
+
+package templates
+
+import (
+    "fmt"                 
+    "proiect_lms/views"  
+)
+
+templ Dashboard(isAdmin bool) {
+    <div class="bg-white p-6 rounded-xl shadow-md">
+        <div class="flex gap-4 mb-6">
+             <input type="text" name="search" 
+                 placeholder="Search..." 
+                 hx-get="/search-books" 
+                 hx-trigger="keyup changed delay:300ms" 
+                 hx-target="#results" 
+                 hx-include="[name='filterBy']" 
+                 class="flex-1 border p-3 rounded-lg focus:ring-2 focus:ring-green-400 outline-none" /> 
+            <select name="filterBy" class="border p-3 rounded-lg">
+                <option value="Title">Title</option>
+                <option value="Author">Author</option>
+                if isAdmin {
+                    <option value="ISBN">ISBN</option> 
+                }
+            </select>
+        </div>
+
+        <table class="w-full">
+            <thead>...</thead>
+            <tbody id="results"> 
+                </tbody>
+        </table>
+    </div>
+}
+
+templ BookListResults(books []views.BookView, isAdmin bool) {
+    for _, book := range books {
+        <tr>
+            <td class="p-3 border-b">{ book.Title }</td>
+            <td class="p-3 border-b">{ book.Author }</td>
+            <td class="p-3 border-b">{ book.ISBN }</td>
+            <td class="p-3 border-b">
+                if isAdmin {
+                    <button hx-delete={ fmt.Sprintf("/delete-book?book_id=%d", book.ID) } 
+                            hx-confirm="Are you sure?"
+                            class="text-red-600">Delete</button>
+                } else {
+                    <button hx-post={ fmt.Sprintf("/loan-book?book_id=%d", book.ID) } 
+                            class="bg-green-400 px-3 py-1 rounded font-bold">
+                        Loan
+                    </button>
+                }
+            </td>
+        </tr>
+    }
+}
